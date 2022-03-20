@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1647816640053.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3069184532",
+    "id" : "C578F67D",
+    "lastKnownWriteTime" : 1647816624,
+    "last_content_update" : 1647816624,
+    "path" : "C:/Users/shieldx1/Desktop/Connections/R/Connections.R",
+    "project_path" : "R/Connections.R",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
