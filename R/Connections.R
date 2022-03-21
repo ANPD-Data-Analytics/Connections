@@ -7,8 +7,8 @@
 ### Updated: 03/21/2022 (daniel.shields@abbott.com) - setting the working directory to the users 511 Onedrive/LoginInfo
 ###           Folder + Removing OLAPR Connections to Cubes
 
-
-library(readtext)
+Imports:
+  readtext
 
 
 #get the user's 511 ID and set the working directory to their OneDrive/LoginInfo Folder
