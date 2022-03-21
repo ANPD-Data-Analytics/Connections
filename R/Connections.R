@@ -8,7 +8,7 @@
 ###           Folder + Removing OLAPR Connections to Cubes
 
 
-#library(readtext)
+library(readtext)
 
 
 #get the user's 511 ID and set the working directory to their OneDrive/LoginInfo Folder
