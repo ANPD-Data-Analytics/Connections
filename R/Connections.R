@@ -1,26 +1,31 @@
-### Azure SQL Server SQL, Azure SSAS Cube MDX, Connecting with R Lunch and Learn
+
 ### Data Connections
 ### Date Created: 5/29/2020
 ### Author: Daniel Shields daniel.shields@abbott.com
+### Notes: Users must have a folder in their OneDrive named LoginInfo with various UID/PWD .txt files as specified below
+
+### Updated: 03/21/2022 (daniel.shields@abbott.com) - setting the working directory to the users 511 Onedrive/LoginInfo
+###           Folder + Removing OLAPR Connections to Cubes
+
 
 library(readtext)
 library(odbc)
-#library(olapR)
 
-#UID's and PWD's from files 
-#modify to point to your files
-uid <- readtext(
-  "C:/Users/shieldx1/OneDrive - Abbott/LoginInfo/SandboxDB__UID.txt")$text
-pwd <- readtext(
-  "C:/Users/shieldx1/OneDrive - Abbott/LoginInfo/SandboxDB__PWD.txt")$text
-uid2 <- readtext(
-  "C:/Users/shieldx1/OneDrive - Abbott/LoginInfo/Cube_UID.txt")$text
-uidBOA <- readtext(
-  "C:/Users/shieldx1/OneDrive - Abbott/LoginInfo/BOADB__UID.txt")$text
-pwdBOA <- readtext(
-  "C:/Users/shieldx1/OneDrive - Abbott/LoginInfo/BOADB__PWD.txt")$text
+#get the user's 511 ID and set the working directory to their OneDrive/LoginInfo Folder
+sysUser511 <- Sys.getenv("username")
+setwd(paste("C:/Users/", sysUser511, "/OneDrive - Abbott/LoginInfo", sep = ""))
 
-#odbc connection string
+#get UIDs and Passwords for the various machines we're wanting to connect to.
+uid <- readtext("SandboxDB__UID.txt")$text
+pwd <- readtext("SandboxDB__PWD.txt")$text
+uid2 <- readtext("Cube_UID.txt")$text
+uidBOA <- readtext("BOADB__UID.txt")$text
+pwdBOA <- readtext("BOADB__PWD.txt")$text
+
+
+
+#odbc connection string for the Retail Velocity Cube
+
 odbcConnStr <- paste0("Driver={ODBC Driver 17 for SQL Server};
                  Server=tcp:abt-sqlmi03-test.public.14690b0458e7.database.windows.net,3342;
                  database=AbbottSandbox;
@@ -31,12 +36,9 @@ odbcConnStr <- paste0("Driver={ODBC Driver 17 for SQL Server};
                  Connection Timeout=1000;
                  Authentication=ActiveDirectoryPassword;")
 
-# #odbc connection from DSN
-# odbcConnStr2 <- dbConnect(odbc::odbc(), "SQLSandbox", 
-#                           Driver = "SQL Server", 
-#                           UID = uid, 
-#                           PWD = pwd, 
-#                           timeout = 10)
+
+
+#odbc connection string for the Abbott ANPD MI Data Analytics BOA (Business Owned Area)
 
 odbcConnStrBOA <- paste0("Driver={ODBC Driver 17 for SQL Server};
                  Server=azp02ads.database.windows.net;
@@ -47,42 +49,26 @@ odbcConnStrBOA <- paste0("Driver={ODBC Driver 17 for SQL Server};
                  TrustServerCertificate=no;
                  Connection Timeout=1000;
                  Authentication=ActiveDirectoryPassword;")
-#olapR connection strings
-#modify the inital catalog if connecting to another cube
-#AbbottCube
-olapRConnStrA<- paste0("Provider=MSOLAP;
-                Persist Security Info=True;
-                Persist Encrypted = True;
-                Data Source=asazure://northcentralus.asazure.windows.net/rioas;
-                MDX Missing Member Mode=Ignore;
-                Initial Catalog=AbbottCube;
-                Update Isolation Level=2;
-                User ID=", uid2, ";")
-#KrogerWeeklyCube
-olapRConnStrKW <- paste0("Provider=MSOLAP;
-                Persist Security Info=True;
-                Persist Encrypted = True;
-                Data Source=asazure://northcentralus.asazure.windows.net/rioas;
-                MDX Missing Member Mode=Ignore;
-                Initial Catalog=KrogerWeeklyCube;
-                Update Isolation Level=2;
-                User ID=", uid2, ";")
-#NielsenMarketSubtotal
-olapRConnStrNSubT <- paste0("Provider=MSOLAP;
-                Persist Security Info=True;
-                Persist Encrypted = True;
-                Data Source=asazure://northcentralus.asazure.windows.net/rioas;
-                MDX Missing Member Mode=Ignore;
-                Initial Catalog=NielsenMarketSubtotal;
-                Update Isolation Level=2;
-                User ID=", uid2, ";")
-#NielsenMarketUPC
-olapRConnStrNUPC <- paste0("Provider=MSOLAP;
-                Persist Security Info=True;
-                Persist Encrypted = True;
-                Data Source=asazure://northcentralus.asazure.windows.net/rioas;
-                MDX Missing Member Mode=Ignore;
-                Initial Catalog=NielsenMarketUPC;
-                Update Isolation Level=2;
-                User ID=", uid2, ";")
 
+
+#
+#
+# #olapR connection strings - unused (as of 3/21/2022) due to unsuportability of OLAPR package.
+# #AbbottCube
+# olapRConnStrA<- paste0("Provider=MSOLAP;
+#                 Persist Security Info=True;
+#                 Persist Encrypted = True;
+#                 Data Source=asazure://northcentralus.asazure.windows.net/rioas;
+#                 MDX Missing Member Mode=Ignore;
+#                 Initial Catalog=AbbottCube;
+#                 Update Isolation Level=2;
+#                 User ID=", uid2, ";")
+# #KrogerWeeklyCube
+# olapRConnStrKW <- paste0("Provider=MSOLAP;
+#                 Persist Security Info=True;
+#                 Persist Encrypted = True;
+#                 Data Source=asazure://northcentralus.asazure.windows.net/rioas;
+#                 MDX Missing Member Mode=Ignore;
+#                 Initial Catalog=KrogerWeeklyCube;
+#                 Update Isolation Level=2;
+#                 User ID=", uid2, ";")
