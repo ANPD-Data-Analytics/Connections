@@ -50,7 +50,7 @@ odbcConnStrBOA <- paste0("Driver={ODBC Driver 17 for SQL Server};
                  Connection Timeout=1000;
                  Authentication=ActiveDirectoryPassword;")
 
-
+#testing an update
 #
 #
 # #olapR connection strings - unused (as of 3/21/2022) due to unsuportability of OLAPR package.
