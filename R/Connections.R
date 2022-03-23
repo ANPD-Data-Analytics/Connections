@@ -7,7 +7,7 @@
 ### Updated: 03/21/2022 (daniel.shields@abbott.com) - setting the working directory to the users 511 Onedrive/LoginInfo
 ###           Folder + Removing OLAPR Connections to Cubes
 
-#changing a silly comment
+
 library(readtext)
 
 
