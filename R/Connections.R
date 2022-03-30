@@ -21,8 +21,10 @@ pwd <- readtext("SandboxDB__PWD.txt")$text
 uid2 <- readtext("Cube_UID.txt")$text
 uidBOA <- readtext("BOADB__UID.txt")$text
 pwdBOA <- readtext("BOADB__PWD.txt")$text
-
-
+WalgreensUID <- readtext("Walgreens_UID.txt")$text
+WalgreensPWD <- readtext("Walgreens_PWD.txt")$text
+VendorCentralUID <- readtext("VendorCentral_UID.txt")$text
+VendorCentralPWD <- readtext("VendorCentral_PWD.txt")$text
 
 #odbc connection string for the Retail Velocity Cube
 
