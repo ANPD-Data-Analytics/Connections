@@ -25,6 +25,8 @@ WalgreensUID <- readtext("Walgreens_UID.txt")$text
 WalgreensPWD <- readtext("Walgreens_PWD.txt")$text
 VendorCentralUID <- readtext("VendorCentral_UID.txt")$text
 VendorCentralPWD <- readtext("VendorCentral_PWD.txt")$text
+EdgeUID <- readtext("Edge_UID.txt")$text
+EdgePWD <- readtext("Edge_PWD.txt")$text
 
 #odbc connection string for the Retail Velocity Cube
 
