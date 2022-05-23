@@ -16,18 +16,18 @@ sysUser511 <- Sys.getenv("username")
 setwd(paste("C:/Users/", sysUser511, "/OneDrive - Abbott/LoginInfo", sep = ""))
 
 #get UIDs and Passwords for the various machines we're wanting to connect to.
-uid <- readtext("SandboxDB__UID.txt")$text
-pwd <- readtext("SandboxDB__PWD.txt")$text
-uid2 <- readtext("Cube_UID.txt")$text
-uidBOA <- readtext("BOADB__UID.txt")$text
-pwdBOA <- readtext("BOADB__PWD.txt")$text
-WalgreensUID <- readtext("Walgreens_UID.txt")$text
-WalgreensPWD <- readtext("Walgreens_PWD.txt")$text
-VendorCentralUID <- readtext("VendorCentral_UID.txt")$text
-VendorCentralPWD <- readtext("VendorCentral_PWD.txt")$text
-EdgeUID <- readtext("Edge_UID.txt")$text
-EdgePWD <- readtext("Edge_PWD.txt")$text
-TestTrySilent <- try(readtext("TestTrySilent.txt")$text, silent = TRUE)
+uid <- try(readtext("SandboxDB__UID.txt")$text, silent = TRUE)
+pwd <- try(readtext("SandboxDB__PWD.txt")$text, silent = TRUE)
+uid2 <- try(readtext("Cube_UID.txt")$text, silent = TRUE)
+uidBOA <- try(readtext("BOADB__UID.txt")$text, silent = TRUE)
+pwdBOA <- try(readtext("BOADB__PWD.txt")$text, silent = TRUE)
+WalgreensUID <- try(readtext("Walgreens_UID.txt")$text, silent = TRUE)
+WalgreensPWD <- try(readtext("Walgreens_PWD.txt")$text, silent = TRUE)
+VendorCentralUID <- try(readtext("VendorCentral_UID.txt")$text, silent = TRUE)
+VendorCentralPWD <- try(readtext("VendorCentral_PWD.txt")$text, silent = TRUE)
+EdgeUID <- try(readtext("Edge_UID.txt")$text, silent = TRUE)
+EdgePWD <- try(readtext("Edge_PWD.txt")$text, silent = TRUE)
+#TestTrySilent <- try(readtext("TestTrySilent.txt")$text, silent = TRUE)
 
 #odbc connection string for the Retail Velocity Cube
 
