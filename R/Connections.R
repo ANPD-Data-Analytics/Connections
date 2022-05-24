@@ -8,8 +8,13 @@
 ###           Folder + Removing OLAPR Connections to Cubes
 
 ###carly edit comment
-library(readtext)
+#library(readtext)
 
+#install package if necessary, then load 
+  if(!require(readtext)){
+    install.packages("readtext")
+    library(readtext)
+  }
 
 #get the user's 511 ID and set the working directory to their OneDrive/LoginInfo Folder
 sysUser511 <- Sys.getenv("username")
