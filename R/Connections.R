@@ -7,6 +7,9 @@
 ### Updated: 03/21/2022 (daniel.shields@abbott.com) - setting the working directory to the users 511 Onedrive/LoginInfo
 ###           Folder + Removing OLAPR Connections to Cubes
 
+### 05/26/2022 (rachel.addlespurger@abbott.com) - Adding contact string for data team emails
+###           Also added try statements for Usernames and Passowrds to ignore errors if a file doesnt exist in user's folder
+
 ###carly edit comment
 #library(readtext)
 
@@ -33,6 +36,9 @@ VendorCentralPWD <- try(readtext("VendorCentral_PWD.txt")$text, silent = TRUE)
 EdgeUID <- try(readtext("Edge_UID.txt")$text, silent = TRUE)
 EdgePWD <- try(readtext("Edge_PWD.txt")$text, silent = TRUE)
 #TestTrySilent <- try(readtext("TestTrySilent.txt")$text, silent = TRUE)
+
+# Data Team Contact Email String
+DataTeam <- c("rachel.addlespurger@abbott.com","daniel.shields@abbott.com","rossi.taylor@abbott.com","heather.motto@abbott.com","carly.goodman@abbott.com","jeffery.glassnapp@abbott.com")
 
 #odbc connection string for the Retail Velocity Cube
 
