@@ -34,6 +34,9 @@ EdgeUID <- try(readtext("Edge_UID.txt")$text, silent = TRUE)
 EdgePWD <- try(readtext("Edge_PWD.txt")$text, silent = TRUE)
 #TestTrySilent <- try(readtext("TestTrySilent.txt")$text, silent = TRUE)
 
+# Data Team Contact Email String
+DataTeam <- c("rachel.addlespurger@abbott.com","daniel.shields@abbott.com","rossi.taylor@abbott.com","heather.motto@abbott.com","carly.goodman@abbott.com","jeffery.glassnapp@abbott.com","logan.crittenden@abbott.com")
+
 #odbc connection string for the Retail Velocity Cube
 
 odbcConnStr <- paste0("Driver={ODBC Driver 17 for SQL Server};
