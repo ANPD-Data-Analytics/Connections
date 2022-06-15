@@ -1,5 +1,5 @@
 
-### Data Connections
+## Data Connections
 ### Date Created: 5/29/2020
 ### Author: Daniel Shields daniel.shields@abbott.com
 ### Notes: Users must have a folder in their OneDrive named LoginInfo with various UID/PWD .txt files as specified below
@@ -10,7 +10,7 @@
 ###carly edit comment
 #library(readtext)
 
-#install package if necessary, then load 
+#install package if necessary, then load
   if(!require(readtext)){
     install.packages("readtext")
     library(readtext)
