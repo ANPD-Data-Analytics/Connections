@@ -6,6 +6,7 @@
 
 ### Updated: 03/21/2022 (daniel.shields@abbott.com) - setting the working directory to the users 511 Onedrive/LoginInfo
 ###           Folder + Removing OLAPR Connections to Cubes
+### 11/06/2022 update to force an automated pull to update cached pwds.
 
 ###carly edit comment
 #library(readtext)
