@@ -33,6 +33,8 @@ VendorCentralUID <- try(readtext("VendorCentral_UID.txt")$text, silent = TRUE)
 VendorCentralPWD <- try(readtext("VendorCentral_PWD.txt")$text, silent = TRUE)
 EdgeUID <- try(readtext("Edge_UID.txt")$text, silent = TRUE)
 EdgePWD <- try(readtext("Edge_PWD.txt")$text, silent = TRUE)
+iSpotUID <- try(readtext("iSpot_UID.txt")$text, silent = TRUE)
+iSpotPWD <- try(readtext("iSpot_PWD.txt")$text, silent = TRUE)
 #TestTrySilent <- try(readtext("TestTrySilent.txt")$text, silent = TRUE)
 
 # Data Team Contact Email String
