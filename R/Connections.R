@@ -38,6 +38,8 @@ EdgeAPI_UserUUID <- try(readtext("EdgeAPI_UserUUID.txt")$text, silent = TRUE)
 EdgeAPI_ClientUUID <- try(readtext("EdgeAPI_ClientUUID.txt")$text, silent = TRUE)
 iSpotUID <- try(readtext("iSpot_UID.txt")$text, silent = TRUE)
 iSpotPWD <- try(readtext("iSpot_PWD.txt")$text, silent = TRUE)
+CDP_Storage_EndPoint <- try(readtext("CDP_Storage_EndPoint.txt")$text, silent = TRUE)
+CDP_Storage_EndPoint_Key <- try(readtext("CDP_Storage_EndPoint_Key.txt")$text, silent = TRUE)
 #TestTrySilent <- try(readtext("TestTrySilent.txt")$text, silent = TRUE)
 
 # Data Team Contact Email String
