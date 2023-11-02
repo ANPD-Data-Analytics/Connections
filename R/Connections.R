@@ -73,6 +73,17 @@ odbcConnStrBOA <- paste0("Driver={ODBC Driver 17 for SQL Server};
 
 
 
+odbcConnStrSynpase <- paste0("Driver={ODBC Driver 17 for SQL Server};
+                 Server=anpd-mida-synapse-workspace.sql.azuresynapse.net;
+                 database=anpd_mida_sql_pool;
+                 Uid={", uidBOA, "};
+                 Pwd={", pwdBOA, "};
+                 Encrypt=yes;
+                 TrustServerCertificate=no;
+                 Connection Timeout=1000;
+                 Authentication=ActiveDirectoryPassword;")
+
+
 
 # #olapR connection strings - unused (as of 3/21/2022) due to unsuportability of OLAPR package.
 # #AbbottCube
