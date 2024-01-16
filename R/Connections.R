@@ -43,8 +43,7 @@ CDP_Storage_EndPoint_Key <- try(readtext("CDP_Storage_EndPoint_Key.txt")$text, s
 #TestTrySilent <- try(readtext("TestTrySilent.txt")$text, silent = TRUE)
 
 # Data Team Contact Email String
-DataTeam <- c("rachel.addlespurger@abbott.com","daniel.shields@abbott.com","heather.motto@abbott.com","carly.goodman@abbott.com","brianna.thomas@abbott.com","manish.subedi@abbott.com")
-
+DataTeam <- c("rachel.addlespurger@abbott.com","daniel.shields@abbott.com","heather.motto@abbott.com","carly.goodman@abbott.com","brianna.thomas@abbott.com","manish.subedi@abbott.com", "rekha.selvasekaran@abbott.com")
 #odbc connection string for the Retail Velocity Cube
 
 odbcConnStr <- paste0("Driver={ODBC Driver 17 for SQL Server};
