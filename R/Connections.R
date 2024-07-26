@@ -73,14 +73,14 @@ odbcConnStrBOA <- paste0("Driver={ODBC Driver 17 for SQL Server};
 
 
 odbcConnStrSynpase <- paste0("Driver={ODBC Driver 17 for SQL Server};
-                 Server=anpd-mida-synapse-workspace.sql.azuresynapse.net;
-                 database=anpd_mida_sql_pool;
-                 Uid={", uidBOA, "};
-                 Pwd={", pwdBOA, "};
-                 Encrypt=yes;
-                 TrustServerCertificate=no;
-                 Connection Timeout=1000;
-                 Authentication=ActiveDirectoryPassword;")
+                Server=anpd-mida-synapse-workspace.sql.azuresynapse.net;
+                database=anpd_mida_sql_pool;
+                #Uid={", uidBOA, "};
+                #Pwd={", pwdBOA, "};
+                Encrypt=yes;
+                TrustServerCertificate=yes;
+                Connection Timeout=1000;
+                Authentication=ActiveDirectoryIntegrated;")
 
 
 
