@@ -42,6 +42,9 @@ CDP_Storage_EndPoint <- try(readtext("CDP_Storage_EndPoint.txt")$text, silent = 
 CDP_Storage_EndPoint_Key <- try(readtext("CDP_Storage_EndPoint_Key.txt")$text, silent = TRUE)
 #TestTrySilent <- try(readtext("TestTrySilent.txt")$text, silent = TRUE)
 
+# Set SMTP password env variable for email function
+Sys.setenv("SMTP_PASSWORD"=pwdBOA)
+
 # Data Team Contact Email String
 DataTeam <- c("rachel.addlespurger@abbott.com","daniel.shields@abbott.com","heather.motto@abbott.com","carly.goodman@abbott.com","brianna.thomas@abbott.com","manish.subedi@abbott.com", "rekha.selvasekaran@abbott.com")
 #odbc connection string for the Retail Velocity Cube
