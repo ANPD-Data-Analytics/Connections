@@ -40,6 +40,9 @@ iSpotUID <- try(readtext("iSpot_UID.txt")$text, silent = TRUE)
 iSpotPWD <- try(readtext("iSpot_PWD.txt")$text, silent = TRUE)
 CDP_Storage_EndPoint <- try(readtext("CDP_Storage_EndPoint.txt")$text, silent = TRUE)
 CDP_Storage_EndPoint_Key <- try(readtext("CDP_Storage_EndPoint_Key.txt")$text, silent = TRUE)
+AnieUID <- try(readtext("ANIE_UID.txt")$text, silent = TRUE)
+AniePWD <- try(readtext("ANIE_PWD.txt")$text, silent = TRUE)
+
 #TestTrySilent <- try(readtext("TestTrySilent.txt")$text, silent = TRUE)
 
 # Set SMTP password env variable for email function
